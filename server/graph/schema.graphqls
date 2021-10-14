@@ -1,0 +1,28 @@
+type Query {
+  questions: [Question!]!
+}
+
+interface Question {
+  id: ID!
+  weight: Float!
+}
+
+type TextQuestion implements Question {
+  id: ID!
+  body: String!
+  weight: Float!
+}
+
+type ChoiceQuestion implements Question {
+  id: ID!
+  body: String!
+  weight: Float!
+  options: [Option!]
+}
+
+type Option {
+  id: ID!
+  body: String!
+  weight: Float!
+}
+
