@@ -26,3 +26,22 @@ type Option {
   weight: Float!
 }
 
+type Answer {
+  questionId: ID!
+  body: String!
+  weight: Float!
+}
+
+type Result {
+  weight: Float!
+}
+
+input NewAnswer {
+  questionID: ID!
+  optionID: ID
+  body: String
+}
+
+type Mutation {
+  createAnswers(input: [NewAnswer!]): Result
+}

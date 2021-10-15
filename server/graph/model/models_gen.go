@@ -6,6 +6,12 @@ type Question interface {
 	IsQuestion()
 }
 
+type Answer struct {
+	QuestionID string  `json:"questionId"`
+	Body       string  `json:"body"`
+	Weight     float64 `json:"weight"`
+}
+
 type ChoiceQuestion struct {
 	ID      string    `json:"id"`
 	Body    string    `json:"body"`
@@ -15,9 +21,19 @@ type ChoiceQuestion struct {
 
 func (ChoiceQuestion) IsQuestion() {}
 
+type NewAnswer struct {
+	QuestionID string  `json:"questionID"`
+	OptionID   *string `json:"optionID"`
+	Body       *string `json:"body"`
+}
+
 type Option struct {
 	ID     string  `json:"id"`
 	Body   string  `json:"body"`
+	Weight float64 `json:"weight"`
+}
+
+type Result struct {
 	Weight float64 `json:"weight"`
 }
 

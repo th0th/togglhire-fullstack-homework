@@ -16,13 +16,13 @@ Your solution should meet all these requirements.
 
 - [x] Return at least one choice and one text question from the API
 
-- [ ] Implement a mutation for submitting the answers.
+- [x] Implement a mutation for submitting the answers.
 
   For each question, the selected option ID or the entered text is submitted.
 
-- [ ] Validate the submitted answers (question and option IDs are correct, question types match, ...)
+- [x] Validate the submitted answers (question and option IDs are correct, question types match, ...)
 
-- [ ] Print the answers to stdout in a machine-readable format (JSON, CSV, ...)
+- [x] Print the answers to stdout in a machine-readable format (JSON, CSV, ...)
 
   For simplicity we can assume that stdout is written to a log file, which is then later processed.
 
@@ -42,9 +42,9 @@ Your solution should meet all these requirements.
 
 These requirements are not required, but feel free to complete some of them if they seem interesting, or to come up with your own :)
 
-- [ ] Load questions from and save answers to a SQLite database.
+- [x] Load questions from and save answers to a SQLite database.
 
-- [ ] Evaluate the answers in some way and show a score to the candidate.
+- [x] Evaluate the answers in some way and show a score to the candidate.
 
 - [ ] Add automated tests for the server resolvers and client components.
 
