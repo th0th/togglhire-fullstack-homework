@@ -30,7 +30,7 @@ Your solution should meet all these requirements.
 
 - [x] Show the questions and options to the user in some way.
 
-- [ ] Show the questions and options sorted by their `weight`.
+- [x] Show the questions and options sorted by their `weight`.
 
 - [x] Implement UI to answer choice and text questions.
 
