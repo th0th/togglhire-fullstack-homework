@@ -1,0 +1,14 @@
+.activityIndicator {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #ff897a transparent #ff897a;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+
+  100% { transform: rotate(359deg) }
+}

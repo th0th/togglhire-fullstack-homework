@@ -5,5 +5,6 @@ func GetModels() []interface{} {
 		Question{},
 		Option{},
 		Answer{},
+		Result{},
 	}
 }

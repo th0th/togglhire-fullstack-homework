@@ -1,0 +1,72 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+interface Answer {
+  id: ID!
+  questionId: ID!
+  weight: Float!
+}
+
+interface Question {
+  id: ID!
+  weight: Float!
+}
+
+type ChoiceQuestion implements Question {
+  answer: ChoiceQuestionAnswer
+  body: String!
+  id: ID!
+  options: [Option!]
+  weight: Float!
+}
+
+type ChoiceQuestionAnswer implements Answer {
+  id: ID!
+  optionId: ID
+  questionId: ID!
+  weight: Float!
+}
+
+type Mutation {
+  setAnswer(input: AnswerInput!): Answer
+  submit: Result
+}
+
+type Option {
+  body: String!
+  id: ID!
+  weight: Float!
+}
+
+type Query {
+  questions: [Question!]!
+  result: [Result]!
+}
+
+type Result {
+  weight: Float!
+}
+
+type TextQuestion implements Question {
+  answer: TextQuestionAnswer
+  body: String!
+  id: ID!
+  weight: Float!
+}
+
+type TextQuestionAnswer implements Answer {
+  body: String
+  id: ID!
+  questionId: ID!
+  weight: Float!
+}
+
+input AnswerInput {
+  body: String
+  optionID: ID
+  questionID: ID!
+}

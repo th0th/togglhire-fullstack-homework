@@ -1,0 +1,22 @@
+.choiceQuestionAnswer {
+  padding: 25px var(--horizontal-padding);
+
+  border-top: 1px solid #e7e7e7;
+
+  .options {
+    .option {
+      margin: 10px 0;
+
+      .label {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 8px;
+
+        .radioInput {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}

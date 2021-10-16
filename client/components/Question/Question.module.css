@@ -1,0 +1,60 @@
+.question {
+  --horizontal-padding: 40px;
+
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 4px;
+
+  font-size: 14px;
+
+  .top {
+    padding: 25px var(--horizontal-padding);
+
+    .title {
+      margin-bottom: 25px;
+
+      font-size: 10px;
+
+      color: #989898;
+    }
+  }
+
+  .answer {
+    padding: 25px var(--horizontal-padding);
+
+    border-top: 1px solid #e7e7e7;
+
+    .options {
+      .option {
+        margin: 10px 0;
+
+        .label {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 8px;
+
+          .radioInput {
+            margin-top: 2px;
+          }
+
+          .body {
+
+          }
+        }
+      }
+    }
+
+    .textarea {
+      display: block;
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+
+      border: 1px solid #e7e7e7;
+      border-radius: 4px;
+
+      resize: none;
+    }
+  }
+}
+

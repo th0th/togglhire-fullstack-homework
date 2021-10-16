@@ -13,7 +13,7 @@ func (v *ValidationError) Error() string {
 	return v.Message
 }
 
-func ValidateAnswer(a *model.NewAnswer, q *storage.Question) error {
+func ValidateAnswer(a *model.AnswerInput, q *storage.Question) error {
 	if q == nil {
 		return &ValidationError{
 			Message: "Please provide a valid question ID.",

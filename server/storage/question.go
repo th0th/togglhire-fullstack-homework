@@ -17,6 +17,8 @@ type Question struct {
 	Weight float64 `gorm:"not null"`
 
 	Options []*Option
+
+	Answer *Answer
 }
 
 func (q *Question) BeforeCreate(tx *gorm.DB) (err error) {

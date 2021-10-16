@@ -2,30 +2,38 @@
 
 package model
 
+type Answer interface {
+	IsAnswer()
+}
+
 type Question interface {
 	IsQuestion()
 }
 
-type Answer struct {
-	QuestionID string  `json:"questionId"`
-	Body       string  `json:"body"`
-	Weight     float64 `json:"weight"`
-}
-
-type ChoiceQuestion struct {
-	ID      string    `json:"id"`
-	Body    string    `json:"body"`
-	Weight  float64   `json:"weight"`
-	Options []*Option `json:"options"`
-}
-
-func (ChoiceQuestion) IsQuestion() {}
-
-type NewAnswer struct {
+type AnswerInput struct {
 	QuestionID string  `json:"questionID"`
 	OptionID   *string `json:"optionID"`
 	Body       *string `json:"body"`
 }
+
+type ChoiceQuestion struct {
+	ID      string                `json:"id"`
+	Body    string                `json:"body"`
+	Weight  float64               `json:"weight"`
+	Options []*Option             `json:"options"`
+	Answer  *ChoiceQuestionAnswer `json:"answer"`
+}
+
+func (ChoiceQuestion) IsQuestion() {}
+
+type ChoiceQuestionAnswer struct {
+	ID         string  `json:"id"`
+	QuestionID string  `json:"questionId"`
+	Weight     float64 `json:"weight"`
+	OptionID   *string `json:"optionId"`
+}
+
+func (ChoiceQuestionAnswer) IsAnswer() {}
 
 type Option struct {
 	ID     string  `json:"id"`
@@ -38,9 +46,19 @@ type Result struct {
 }
 
 type TextQuestion struct {
-	ID     string  `json:"id"`
-	Body   string  `json:"body"`
-	Weight float64 `json:"weight"`
+	ID     string              `json:"id"`
+	Body   string              `json:"body"`
+	Weight float64             `json:"weight"`
+	Answer *TextQuestionAnswer `json:"answer"`
 }
 
 func (TextQuestion) IsQuestion() {}
+
+type TextQuestionAnswer struct {
+	ID         string  `json:"id"`
+	QuestionID string  `json:"questionId"`
+	Weight     float64 `json:"weight"`
+	Body       *string `json:"body"`
+}
+
+func (TextQuestionAnswer) IsAnswer() {}

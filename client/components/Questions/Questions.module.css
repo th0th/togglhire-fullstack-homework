@@ -1,0 +1,24 @@
+.questions {
+  margin: auto;
+
+  .questionsWrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    padding-top: 80px;
+  }
+
+  .submitButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 40px;
+    gap: 20px;
+  }
+}
+
+@media (--min-md) {
+  .questions {
+    width: 83.3333%;
+  }
+}
